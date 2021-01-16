@@ -1,0 +1,21 @@
+ class GenerateParenthesis {
+    public List<String> generateParenthesis(int n) {
+        List<String> res = new ArrayList<String>();
+        nextComb(res, "(", n, 1, 0);
+        return res;
+    }
+    
+    private void nextComb(List<String> ans, String s, int n, int open, int clos){
+        if (open==clos && open==n) {
+            ans.add(s);
+            return;
+        }
+        if (open<n) {
+            nextComb(ans, s+"(", n, open+1, clos);
+        }
+        if (open>clos){
+            nextComb(ans, s+")", n, open, clos+1);
+        }
+        return;
+    }
+}
