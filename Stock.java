@@ -1,6 +1,6 @@
 public class Stock {
     public int maxProfit(int[] prices) {
-        if(prices == null | prices.length == 0)
+        if(prices == null || prices.length == 0)
           return 0;
         int maxP = Integer.MIN_VALUE;
         int localMin = prices[0];
